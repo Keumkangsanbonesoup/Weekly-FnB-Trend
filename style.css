@@ -437,3 +437,108 @@ header p#summary-text {
     .dashboard-container { padding: 3rem 1.2rem 4rem; }
     .roller-img { height: 80px; }
 }
+
+/* ── 지난 주차 아카이브 (새 레이아웃) ── */
+.archive-week {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+}
+
+.archive-week:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.05); }
+
+.archive-week-btn {
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 1.1rem 1.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    text-align: left;
+    transition: background 0.2s;
+    font-family: 'Pretendard', sans-serif;
+}
+
+.archive-week-btn:hover,
+.archive-week-btn.open { background: var(--bg); }
+
+.archive-week-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    background: var(--accent-light);
+    color: var(--accent);
+    padding: 0.3rem 0.9rem;
+    border-radius: 99px;
+    white-space: nowrap;
+}
+
+.archive-week-meta {
+    flex: 1;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.archive-week-arrow {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    transition: transform 0.3s;
+}
+
+.archive-week-content {
+    padding: 0.5rem 1.2rem 1.4rem;
+    border-top: 1px solid var(--border);
+}
+
+/* No.1~6 그리드 */
+.archive-trend-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.6rem;
+    padding-top: 0.8rem;
+}
+
+.archive-trend-item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    padding: 0.7rem 0.9rem;
+    border-radius: var(--radius-sm);
+    background: var(--bg);
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: background 0.2s, color 0.2s;
+    min-width: 0;
+}
+
+.archive-trend-item:hover {
+    background: var(--accent-light);
+    color: var(--accent);
+}
+
+.archive-trend-num {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--accent);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.archive-trend-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: keep-all;
+}
+
+@media (max-width: 600px) {
+    .archive-trend-grid { grid-template-columns: repeat(2, 1fr); }
+}
