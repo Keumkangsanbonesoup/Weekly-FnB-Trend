@@ -102,13 +102,27 @@ header {
 }
 
 h1.main-title {
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 5.2rem;
+    /* 한글: Nanum Square Black, 영문/숫자: Bebas Neue */
+    font-family: 'Bebas Neue', 'Nanum Square Black', sans-serif;
+    font-size: 6rem;
     font-weight: 900;
-    letter-spacing: -4px;
-    line-height: 1.05;
-    margin-bottom: 1.6rem;
-    color: var(--accent);
+    letter-spacing: -2px;
+    line-height: 0.95;
+    margin-bottom: 1.8rem;
+    color: var(--text-primary);
+    /* 포인트: 특정 단어만 컬러 주려면 span으로 감싸도 됨 */
+    position: relative;
+}
+
+/* 타이틀 앞에 작은 컬러 강조 라인 */
+h1.main-title::before {
+    content: '';
+    display: block;
+    width: 3rem;
+    height: 5px;
+    background: var(--accent);
+    border-radius: 99px;
+    margin: 0 auto 1.2rem;
 }
 
 header p#summary-text {
