@@ -39,26 +39,50 @@ header {
     animation: fadeInDown 0.8s ease-out;
 }
 
-.food-icons {
+/* ── 무한 롤링 배너 ── */
+.food-icons-roller {
     width: 100vw;
     position: relative;
     left: 50%;
-    right: 50%;
     margin-left: -50vw;
-    margin-right: -50vw;
+    overflow: hidden;
     margin-top: 1.5rem;
     margin-bottom: 3rem;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
+    /* 양 끝 페이드 아웃 */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
 }
 
-/* 상단 이미지가 잘리지 않고 예쁘게 비율 유지되도록 수정 */
-.pixel-food-img {
-    width: 100%; 
-    max-width: 1000px;
-    height: auto;
+.food-icons-roller--bottom {
+    margin-top: 3rem;
+    margin-bottom: 0;
+}
+
+.roller-track {
+    display: flex;
+    width: max-content;
+    animation: roll-left 30s linear infinite;
+}
+
+.roller-track--reverse {
+    animation: roll-right 30s linear infinite;
+}
+
+.roller-img {
+    height: 120px;
+    width: auto;
     object-fit: contain;
+    flex-shrink: 0;
+}
+
+@keyframes roll-left {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes roll-right {
+    0%   { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
 }
 
 /* ✨ 신상 태그 디자인 수정: 아기자기한 피치핑크 택 */
