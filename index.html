@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily F&B Trend Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Pretendard:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/galmuri/dist/galmuri.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <div class="logo sub-copy">3일간 숙성한 따끈한 트렌드만 모았어요</div>
+            <div class="food-icons">
+                <img src="pixel-food.png" alt="F&B 픽셀 일러스트" class="pixel-food-img">
+            </div>
+            <h1 class="main-title">이번 주 트렌드</h1>
+            <p id="summary-text">AI가 분석한 오늘의 핵심 식음료 트렌드를 불러오는 중입니다...</p>
+            <div class="meta-info">
+                <span class="badge">📅 <span id="update-date">...</span></span>
+            </div>
+        </header>
+
+        <main id="trends-grid" class="trends-grid">
+            <!-- 금주 트렌드 카드 -->
+        </main>
+
+        <!-- 지난 주차 아카이브 -->
+        <section id="archive-section" class="archive-section" style="display:none;">
+            <h2 class="archive-section-title">지난 주차 트렌드</h2>
+            <div id="archive-container"></div>
+        </section>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
