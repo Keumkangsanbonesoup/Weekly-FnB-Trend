@@ -110,32 +110,11 @@ header {
 
 h1.main-title {
     font-family: 'ChangwonDangam', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.4rem;
-    margin-bottom: 1.8rem;
-    line-height: 1.1;
-}
-
-/* "금주의" — 작고 차분하게 */
-h1.main-title .t1 {
-    font-size: 2rem;
-    color: var(--text-secondary);
-    letter-spacing: 4px;
-    font-family: 'Pretendard', sans-serif;
-    font-weight: 500;
-}
-
-/* "트렌드" — 크고 꽉 차게, 외곽선으로 입체감 */
-h1.main-title .t2 {
-    font-size: 7rem;
+    font-size: 6rem;
     color: var(--accent);
     letter-spacing: -1px;
-    line-height: 1;
-    display: inline-block;
-    -webkit-text-stroke: 3px #FF6B4A;
-    paint-order: stroke fill;
+    line-height: 1.1;
+    margin-bottom: 1.8rem;
 }
 
 header p#summary-text {
