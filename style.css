@@ -87,6 +87,7 @@ body {
     max-width: 1080px;
     margin: 0 auto;
     padding: 5rem 2rem 6rem;
+    overflow-x: clip;
 }
 
 /* ── 헤더 ── */
@@ -95,8 +96,10 @@ header {
     margin-bottom: 5rem;
     animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
     position: relative;
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 3rem 2rem 2.5rem;
-    border-radius: var(--radius-lg);
     background: linear-gradient(160deg,
         #FFF5F0 0%,
         #FFF8F2 35%,
