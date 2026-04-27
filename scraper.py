@@ -321,11 +321,18 @@ if __name__ == "__main__":
         print(f"📅 현재 주차: {week_label}")
 
         print("1. 유튜브 최신 트렌드 수집 중...")
-        recent_videos = get_latest_youtube_trends(
-            "편의점 신상 리뷰|CU 신상|GS25 신상|디저트 신메뉴",
-            max_results=7
-        )
-        print(f"   → 영상 {len(recent_videos)}개 수집 완료.")
+        youtube_categories = [
+            ("편의점", "편의점 신상 리뷰 CU GS25 세븐일레븐", 3),
+            ("카페_디저트", "카페 신메뉴 디저트 핫플 빵집 신상", 3),
+            ("먹방_핫플", "먹방 신상 요즘 핫한 줄서는 맛집", 2),
+            ("프랜차이즈", "롯데리아 맥도날드 스타벅스 신메뉴", 2),
+        ]
+        recent_videos = []
+        for category, keyword, max_r in youtube_categories:
+            videos = get_latest_youtube_trends(keyword, max_results=max_r)
+            print(f"   [{category}] → {len(videos)}개")
+            recent_videos.extend(videos)
+        print(f"   → 총 영상 {len(recent_videos)}개 수집 완료.")
 
         print("2. 네이버 블로그 수집 중...")
         recent_blogs = get_naver_blog_trends("편의점 신상 내돈내산", max_results=7)
