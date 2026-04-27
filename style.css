@@ -157,9 +157,20 @@ header p#summary-text {
 
 /* ── 트렌드 그리드 ── */
 .trends-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1.2rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    /* 스크롤바 숨기기 */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.trends-grid::-webkit-scrollbar { display: none; }
+
+.trends-grid .trend-card {
+    flex: 0 0 300px;
+    min-width: 300px;
 }
 
 /* ── 카드 ── */
