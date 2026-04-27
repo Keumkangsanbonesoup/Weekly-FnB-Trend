@@ -141,33 +141,19 @@ header p#summary-text {
     font-weight: 500;
 }
 
-/* ── 트렌드 그리드 (가로 스크롤) ── */
+/* ── 트렌드 그리드 (5×2 그리드) ── */
 .trends-grid {
-    display: flex;
-    flex-wrap: nowrap;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     gap: 1.2rem;
-    overflow-x: auto;
-    padding-bottom: 1rem;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    cursor: grab;
-}
-.trends-grid::-webkit-scrollbar { display: none; }
-.trends-grid.dragging { cursor: grabbing; user-select: none; }
-
-.trends-grid .trend-card {
-    flex: 0 0 300px;
-    min-width: 300px;
 }
 
-.scroll-hint {
-    text-align: center;
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    margin-top: 1rem;
-    letter-spacing: 0.3px;
-    animation: fadeUp 0.6s ease both;
-    animation-delay: 0.4s;
+@media (max-width: 1024px) {
+    .trends-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 640px) {
+    .trends-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ── 카드 ── */
@@ -189,6 +175,11 @@ header p#summary-text {
 .trend-card:nth-child(3) { animation-delay: 0.15s; }
 .trend-card:nth-child(4) { animation-delay: 0.2s; }
 .trend-card:nth-child(5) { animation-delay: 0.25s; }
+.trend-card:nth-child(6) { animation-delay: 0.3s; }
+.trend-card:nth-child(7) { animation-delay: 0.35s; }
+.trend-card:nth-child(8) { animation-delay: 0.4s; }
+.trend-card:nth-child(9) { animation-delay: 0.45s; }
+.trend-card:nth-child(10) { animation-delay: 0.5s; }
 
 .trend-card:hover {
     transform: translateY(-6px);
