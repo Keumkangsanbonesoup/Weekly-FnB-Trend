@@ -84,13 +84,13 @@ header {
 
 .header-inner {
     padding: 2.5rem 2rem 3rem;
-    max-width: 1080px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
 /* ── 레이아웃 ── */
 .dashboard-container {
-    max-width: 1080px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 4rem 2rem 6rem;
 }
@@ -145,10 +145,10 @@ header p#summary-text {
 .trends-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 1.2rem;
+    gap: 1.4rem;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
     .trends-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
