@@ -25,7 +25,10 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
 
             const linkUrl = trend.source_link || trend.source_video || '#';
-            const linkName = trend.source_name || '출처';
+            const rawName = trend.source_name || '';
+            const linkName = rawName.toLowerCase().includes('youtube') ? 'YouTube 확인하기'
+                           : rawName.toLowerCase().includes('naver') ? 'Naver Blog 확인하기'
+                           : '출처 확인하기';
 
             return `
                 <div class="trend-card card-${index + 1}">
@@ -38,7 +41,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                         <h3 class="trend-title">${trend.title}</h3>
                         <p class="trend-desc">${trend.description}</p>
                         <div class="keywords">${keywordsHTML}</div>
-                        <a href="${linkUrl}" class="source-btn" target="_blank">${linkName} 확인하기</a>
+                        <a href="${linkUrl}" class="source-btn" target="_blank">${linkName}</a>
                     </div>
                 </div>
             `;
