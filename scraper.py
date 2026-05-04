@@ -288,10 +288,18 @@ def enrich_with_naver_trends(trend_data):
 
 
 def get_week_label():
-    """현재 날짜 기준으로 'n월 n주차' 라벨을 반환합니다."""
+    """현재 날짜 기준으로 'n월 n주차' 라벨을 반환합니다. (월요일 기준 주차)"""
     month = now_kst.month
+    # 해당 월 첫 번째 월요일 기준으로 주차 계산
     first_day = now_kst.replace(day=1)
-    week_num = (now_kst.day + first_day.weekday()) // 7 + 1
+    # 첫 번째 월요일까지 며칠인지
+    days_to_first_monday = (7 - first_day.weekday()) % 7
+    first_monday = first_day + timedelta(days=days_to_first_monday)
+    # 오늘이 첫 번째 월요일 이전이면 1주차
+    if now_kst.date() < first_monday.date():
+        week_num = 1
+    else:
+        week_num = (now_kst.date() - first_monday.date()).days // 7 + 2
     return f"{month}월 {week_num}주차"
 
 
